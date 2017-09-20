@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <script src="/javascripts/jquery-3.2.1.min.js"></script>
+  <script src='/javascripts/updateandremove.js'></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= resp %>
+  </h1>
+  <div class="adding">
+    <form action="/" method="post">
+      <span> <input class="adding" type="text" placeholder="name" name="name"></span>
+      <span> <input class="adding" type="text" placeholder="category"  name="category"></span>
+      <span> <input class="adding" type="text" placeholder="longitude" name="longitude"></span>
+      <span> <input class="adding" type="text" placeholder="latitude" name="latitude"></span>
+      <span> <input class="adding" type="submit" value="   Add   "></span>
+    </form>
+  </div>
+  <h2> List of tables </h2>
+  <div>
+    <div class="container">
+      <span class="Title"> <h2>Name</h2></span>
+      <span class="Title"> <h2>Category</h2></span>
+      <span class="Title"> <h2>Latitude</h2></span>
+      <span class="Title"> <h2>Longitude</h2></span>
+      <span class="Title"> <h2>Update</h2></span>
+      <span class="Title"> <h2>Remove</h2></span>
+    </div>
+    <% for(var i=0; i < points.length; i++) { %>
+      <div>
+        <span class="test"><label><%= points[i].name %></label></span>
+        <span class="test"><label><%= points[i].category %></label></span>
+        <span class="test"><label><%= points[i].latitude %></label></span>
+        <span class="test"><label><%= points[i].longitude %></label></span>
+        <span class="test"> <input class="update" type="button" value="update "></span>
+        <span class="test"> <input class="remove" type="button" value="remove "></span>
+      </div>
+      <% } %>
+  </div>
+
+
+</body>
+
+</html>
